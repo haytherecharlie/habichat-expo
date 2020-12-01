@@ -4,6 +4,7 @@ import ComposeReply from "../components/ComposeReply";
 import PostComplete from "../components/PostComplete";
 import PostHeader from "../components/PostHeader";
 import PostPreview from "../components/PostPreview";
+import ThreadHeader from "../components/ThreadHeader";
 import ThreadReply from "../components/ThreadReply";
 import useDimensions from "../hooks/useDimensions";
 import Page from "../layouts/Page";
@@ -42,6 +43,7 @@ const Home = () => {
 
       {/* THREAD */}
       <Thread splitScreen={splitScreen} active={activePane === THREAD}>
+        <ThreadHeader/>
         {activePane === THREAD && !splitScreen && (
           <Button title="Go Back" onPress={() => setActivePane(POSTS)} />
         )}
