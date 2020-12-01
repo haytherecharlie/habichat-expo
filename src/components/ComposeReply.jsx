@@ -12,7 +12,7 @@ const ComposeReplyWrapper = styled(View)({
 const ComposeInput = styled(TextInput)({
   display: "flex",
   flex: `1 1 100px`,
-  padding: 10
+  padding: 10,
 });
 
 const ComposeReply = ({ activeThread, posts, setPosts }) => {
@@ -32,11 +32,15 @@ const ComposeReply = ({ activeThread, posts, setPosts }) => {
     <ComposeReplyWrapper>
       <ComposeInput
         placeholder="Start typing to reply..."
-        style={{ background: "#FFF" }}
+        style={{ background: "#FFF", fontFamily: "regular" }}
         value={textValue}
         onChange={(e) => setTextValue(e.target.value)}
       />
-      <Button title="Submit" onPress={addReply} />
+      <Button
+        title="Submit"
+        style={{ fontFamily: "medium" }}
+        onPress={addReply}
+      />
     </ComposeReplyWrapper>
   );
 };

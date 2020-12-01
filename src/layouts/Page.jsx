@@ -14,7 +14,7 @@ const Container = styled(View)({
 const Wrapper = styled(View)({
   flex: 1,
   display: "flex",
-  flexDirection: 'row',
+  flexDirection: "row",
   width: `100%`,
   maxWidth: 1200,
   background: "goldenrod",

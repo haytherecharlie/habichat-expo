@@ -35,8 +35,8 @@ const PostPreview = ({ changeThread, index, post }) => {
     <PostWrapper key={`post${index}`} onPress={selectPost}>
       <AvatarWrapper />
       <TextWrapper>
-        <Text style={{ fontWeight: `700` }}>{post.author}</Text>
-        <Text>{post.text}</Text>
+        <Text style={{ fontFamily: 'bold' }}>{post.author}</Text>
+        <Text style={{ fontFamily: 'regular' }}>{post.text}</Text>
       </TextWrapper>
     </PostWrapper>
   );

@@ -11,8 +11,8 @@ const ReplyWrapper = styled(View)({
 const ThreadReply = ({ reply }) => {
   return (
     <ReplyWrapper>
-      <Text style={{ fontWeight: `700` }}>{reply.author}</Text>
-      <Text>{reply.text}</Text>
+      <Text style={{ fontFamily: 'bold' }}>{reply.author}</Text>
+      <Text style={{ fontFamily: 'regular' }}>{reply.text}</Text>
     </ReplyWrapper>
   );
 };

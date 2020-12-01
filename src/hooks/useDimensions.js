@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Dimensions } from "react-native";
 
-const minWidth = 800
+const minWidth = 700
 const window = Dimensions.get("window").width > minWidth
 
 const useDimensions = () => {
