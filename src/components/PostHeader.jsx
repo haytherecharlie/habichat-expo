@@ -3,25 +3,25 @@ import { Text, View } from "react-native";
 import styled from "styled-components/native";
 
 const HeaderContainer = styled(View)({
-  height: 100,
+  height: 50,
   width: `100%`,
-  background: `#F8F8F8`,
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'flex-start',
-  padding: 30
+  background: `#FFF`,
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  padding: 30,
 });
 
 const Title = styled(Text)({
-  fontFamily: "regular",
-  fontSize: 35,
+  fontFamily: "medium",
+  fontSize: 15,
 });
 
 const PostHeader = () => {
   return (
     <HeaderContainer>
-      <Title>Posts</Title>
+      <Title>Latest Posts</Title>
     </HeaderContainer>
   );
 };

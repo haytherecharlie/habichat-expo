@@ -10,26 +10,21 @@ const HeaderContainer = styled(View)({
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "flex-start",
-  background: `#F8F8F8`
+  padding: `22px 30px`
 });
-
-const BackButton = styled(TouchableOpacity)({
-  padding: `10px 20px`
-})
 
 const Title = styled(Text)({
   fontFamily: "medium",
-  fontSize: 18,
-  color: `#444`
+  fontSize: 15,
 });
 
 const ThreadHeader = ({ showBack, setActivePane }) => {
   return (
     <HeaderContainer>
       {showBack && (
-        <BackButton onPress={() => setActivePane(POSTS)}>
+        <TouchableOpacity onPress={() => setActivePane(POSTS)}>
           <Title>{`‹ Back to Posts`}</Title>
-        </BackButton>
+        </TouchableOpacity>
       )}
     </HeaderContainer>
   );

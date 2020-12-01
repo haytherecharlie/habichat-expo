@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Button, TextInput } from "react-native";
 import ComposeReply from "../components/ComposeReply";
 import PostComplete from "../components/PostComplete";
 import PostHeader from "../components/PostHeader";
