@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button, Text, TextInput, View } from "react-native";
-import styled from "styled-components";
 import useDimensions from "../hooks/useDimensions";
 import Page from "../layouts/Page";
 import Posts from "../layouts/Posts";
@@ -9,8 +8,6 @@ import mockPosts from "../mocks/posts";
 
 const POSTS = "posts";
 const THREAD = "thread";
-
-const InputWrapper = styled(View)({});
 
 const Home = () => {
   const splitScreen = useDimensions();
