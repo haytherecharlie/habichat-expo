@@ -40,21 +40,20 @@ const Home = () => {
       {/* THREAD */}
       <Thread splitScreen={splitScreen} active={activePane === THREAD}>
         {activePane === THREAD && !splitScreen && (
-          <Button
-            title="Go Back"
-            onPress={() => setActivePane(POSTS)}
-          />
+          <Button title="Go Back" onPress={() => setActivePane(POSTS)} />
         )}
-        <PostPreview post={posts[activeThread]} changeThread={changeThread} />
+        <PostPreview
+          key={`full-post-${activeThread}`}
+          post={posts[activeThread]}
+          changeThread={changeThread}
+        />
         <ComposeReply
           activeThread={activeThread}
           posts={posts}
           setPosts={setPosts}
         />
         {posts[activeThread].replies.map((reply, index) => (
-          <>
-            <ThreadReply key={`reply-${index}`} reply={reply} />
-          </>
+          <ThreadReply key={`reply-${index}`} reply={reply} />
         ))}
       </Thread>
     </Page>
