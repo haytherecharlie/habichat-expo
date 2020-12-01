@@ -1,6 +1,6 @@
 import React from "react";
 import { FlatList, SafeAreaView } from "react-native";
-import PostPreview from "../components/PostPreview";
+import InfoCard from "../components/InfoCard";
 import styled from "styled-components/native";
 
 const Wrapper = styled(SafeAreaView)({
@@ -13,11 +13,12 @@ const PostsList = ({ posts, changeThread }) => {
       <FlatList
         data={posts}
         keyExtractor={(post) => post.id}
-        renderItem={(post) => (
-          <PostPreview
-            post={post.item}
-            index={post.index}
-            changeThread={changeThread}
+        renderItem={({item, index}) => (
+          <InfoCard
+            title={item.author}
+            subtitle={item.text}
+            index={index}
+            handlePress={changeThread}
           />
         )}
       />

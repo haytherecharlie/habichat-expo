@@ -8,6 +8,8 @@ const Container = styled(View)((P) => ({
   alignItems: "stretch",
   justifyContent: "stretch",
   background: "#FFF",
+  borderLeftWidth: 1,
+  borderLeftColor: `#CCC`
 }));
 
 const Thread = ({ children, splitScreen, active }) => {

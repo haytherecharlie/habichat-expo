@@ -23,7 +23,7 @@ const ThreadHeader = ({ showBack, setActivePane }) => {
     <HeaderContainer>
       {showBack && (
         <TouchableOpacity onPress={() => setActivePane(POSTS)}>
-          <Title>{`‹ Back to Posts`}</Title>
+          <Title>{`‹ Back to Threads`}</Title>
         </TouchableOpacity>
       )}
     </HeaderContainer>

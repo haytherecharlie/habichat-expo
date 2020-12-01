@@ -6,17 +6,18 @@ const PostWrapper = styled(TouchableOpacity)({
   width: `100%`,
   display: `flex`,
   flexDirection: "row",
+  alignItems: 'center',
   justifyContent: "stretch",
   background: `rgba(255,255,255,0.3)`,
   padding: `25px 25px 25px 25px`,
   borderBottomWidth: 1,
-  borderBottomColor: `#F8F8F8`,
+  borderBottomColor: `#F5F5F5`,
 });
 
 const AvatarWrapper = styled(View)({
   background: "indigo",
-  flex: `0 0 50px`,
-  height: 50,
+  flex: `0 0 35px`,
+  height: 35,
   marginRight: 10,
   borderRadius: 10,
 });
@@ -29,20 +30,16 @@ const TextWrapper = styled(View)({
   justifyContent: 'center'
 });
 
-const PostPreview = ({ changeThread, index, post }) => {
-  const selectPost = () => {
-    return changeThread(index);
-  };
-
+const InfoCard = ({ handlePress, index = 0, title = "", subtitle = "" }) => {
   return (
-    <PostWrapper key={`post${index}`} onPress={selectPost}>
+    <PostWrapper key={`post${index}`} onPress={() => handlePress(index)}>
       <AvatarWrapper />
       <TextWrapper>
-        <Text style={{ color: `#444`, fontFamily: 'medium', fontSize: 14, marginBottom: 3 }}>{post.author}</Text>
-        <Text style={{ color: `#888`, fontFamily: 'regular', fontSize: 12 }}>{post.text}</Text>
+        <Text style={{ color: `#444`, fontFamily: 'medium', fontSize: 14, marginBottom: 3 }}>{title}</Text>
+        <Text style={{ color: `#888`, fontFamily: 'regular', fontSize: 12 }}>{subtitle}</Text>
       </TextWrapper>
     </PostWrapper>
   );
 };
 
-export default PostPreview;
+export default InfoCard;

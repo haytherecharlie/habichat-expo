@@ -1,45 +1,28 @@
 import React from "react";
 import { Text, View } from "react-native";
 import styled from "styled-components/native";
+import InfoCard from "./InfoCard";
 
-const PostWrapper = styled(View)({
-  width: `100%`,
+const PostContainer = styled(View)({
+  flex: `0 0 auto`,
   display: `flex`,
-  flexDirection: "row",
+  flexDirection: "column",
   justifyContent: "stretch",
-  background: `rgba(255,255,255,0.3)`,
-  padding: `20px 10px`,
   borderBottomWidth: 1,
   borderBottomColor: `#CCC`,
 });
 
-const AvatarWrapper = styled(View)({
-  background: "red",
-  flex: `0 0 35px`,
-  height: 35,
-  marginRight: 10,
-  borderRadius: 17.5,
-});
-
-const TextWrapper = styled(View)({
-  flex: 1,
-  display: `flex`,
-});
-
-const PostComplete = ({ changeThread, index, post }) => {
-  const selectPost = () => {
-    return changeThread(index);
-  };
-
+const PostBody = ({ post }) => {
   return (
-    <PostWrapper key={`post${index}`} onPress={selectPost}>
-      <AvatarWrapper />
-      <TextWrapper>
-        <Text style={{ fontFamily: 'bold', fontSize: 17 }}>{post.author}</Text>
-        <Text style={{ fontFamily: 'regular', fontSize: 21  }}>{post.text}</Text>
-      </TextWrapper>
-    </PostWrapper>
+    <PostContainer>
+      <InfoCard
+        title={post.author}
+        subtitle="12 December 2020"
+        index="header"
+        handlePress={() => {}}
+      />
+    </PostContainer>
   );
 };
 
-export default PostComplete;
+export default PostBody;

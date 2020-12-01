@@ -9,7 +9,7 @@ const HeaderContainer = styled(View)({
   display: "flex",
   flexDirection: "row",
   alignItems: "center",
-  justifyContent: "flex-start",
+  justifyContent: "center",
   padding: 30,
 });
 
@@ -21,7 +21,7 @@ const Title = styled(Text)({
 const PostHeader = () => {
   return (
     <HeaderContainer>
-      <Title>Latest Posts</Title>
+      <Title>Latest Threads</Title>
     </HeaderContainer>
   );
 };

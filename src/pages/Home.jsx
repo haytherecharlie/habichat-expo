@@ -37,11 +37,7 @@ const Home = () => {
           showBack={activePane === THREAD && !splitScreen}
           setActivePane={setActivePane}
         />
-        <PostComplete
-          key={`full-post-${activeThread}`}
-          post={posts[activeThread]}
-          changeThread={changeThread}
-        />
+        <PostComplete post={posts[activeThread]} />
         <ComposeReply
           activeThread={activeThread}
           posts={posts}
