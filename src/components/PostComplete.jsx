@@ -1,8 +1,8 @@
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 import styled from "styled-components/native";
 
-const PostWrapper = styled(TouchableOpacity)({
+const PostWrapper = styled(View)({
   width: `100%`,
   display: `flex`,
   flexDirection: "row",

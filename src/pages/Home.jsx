@@ -3,7 +3,7 @@ import { Button, TextInput } from "react-native";
 import ComposeReply from "../components/ComposeReply";
 import PostComplete from "../components/PostComplete";
 import PostHeader from "../components/PostHeader";
-import PostPreview from "../components/PostPreview";
+import PostsList from "../entities/PostsList";
 import ThreadHeader from "../components/ThreadHeader";
 import ThreadReply from "../components/ThreadReply";
 import useDimensions from "../hooks/useDimensions";
@@ -11,9 +11,7 @@ import Page from "../layouts/Page";
 import Posts from "../layouts/Posts";
 import Thread from "../layouts/Thread";
 import mockPosts from "../mocks/posts";
-
-const POSTS = "posts";
-const THREAD = "thread";
+import { POSTS, THREAD } from "../constants";
 
 const Home = () => {
   const splitScreen = useDimensions();
@@ -31,22 +29,15 @@ const Home = () => {
       {/* POSTS */}
       <Posts splitScreen={splitScreen} active={activePane === POSTS}>
         <PostHeader />
-        {posts.map((post, index) => (
-          <PostPreview
-            key={`post-${index}`}
-            index={index}
-            post={post}
-            changeThread={changeThread}
-          />
-        ))}
+        <PostsList posts={posts} changeThread={changeThread} />
       </Posts>
 
       {/* THREAD */}
       <Thread splitScreen={splitScreen} active={activePane === THREAD}>
-        <ThreadHeader/>
-        {activePane === THREAD && !splitScreen && (
-          <Button title="Go Back" onPress={() => setActivePane(POSTS)} />
-        )}
+        <ThreadHeader
+          showBack={activePane === THREAD && !splitScreen}
+          setActivePane={setActivePane}
+        />
         <PostComplete
           key={`full-post-${activeThread}`}
           post={posts[activeThread]}

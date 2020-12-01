@@ -1,27 +1,36 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import styled from "styled-components/native";
+import { POSTS } from "../constants";
 
 const HeaderContainer = styled(View)({
-  height: 100,
   width: `100%`,
-  background: `#F8F8F8`,
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'flex-start',
-  padding: 30
+  background: `#FFF`,
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "flex-start",
+  background: `#F8F8F8`
 });
+
+const BackButton = styled(TouchableOpacity)({
+  padding: `10px 20px`
+})
 
 const Title = styled(Text)({
-  fontFamily: "regular",
-  fontSize: 35,
+  fontFamily: "medium",
+  fontSize: 18,
+  color: `#444`
 });
 
-const ThreadHeader = () => {
+const ThreadHeader = ({ showBack, setActivePane }) => {
   return (
     <HeaderContainer>
-      <Title>Thread</Title>
+      {showBack && (
+        <BackButton onPress={() => setActivePane(POSTS)}>
+          <Title>{`‹ Back to Posts`}</Title>
+        </BackButton>
+      )}
     </HeaderContainer>
   );
 };

@@ -5,7 +5,7 @@ import styled from "styled-components/native";
 const Container = styled(View)((P) => ({
   flex: 1,
   display: "flex",
-  alignItems: "center",
+  alignItems: "stretch",
   justifyContent: "stretch",
   background: "#FFF",
 }));
