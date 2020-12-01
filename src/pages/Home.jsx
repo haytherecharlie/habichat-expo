@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Text, TextInput, View } from "react-native";
 import PostPreview from "../components/PostPreview";
+import ThreadReply from "../components/ThreadReply";
 import useDimensions from "../hooks/useDimensions";
 import Page from "../layouts/Page";
 import Posts from "../layouts/Posts";
@@ -34,22 +35,22 @@ const Home = () => {
 
   return (
     <Page>
+      {/* POSTS */}
       <Posts splitScreen={splitScreen} active={activePane === POSTS}>
-        {posts.map((post, i) => (
+        {posts.map((post, index) => (
           <PostPreview
-            key={`post${i}`}
-            index={i}
+            key={`post-${index}`}
+            index={index}
             post={post}
             changeThread={changeThread}
           />
         ))}
       </Posts>
+
+      {/* THREAD */}
       <Thread splitScreen={splitScreen} active={activePane === THREAD}>
-        {posts[activeThread].replies.map((reply, j) => (
-          <View key={`thread${j}`}>
-            <Text>{reply.author}</Text>
-            <Text>{reply.text}</Text>
-          </View>
+        {posts[activeThread].replies.map((reply, index) => (
+          <ThreadReply key={`reply-${index}`} reply={reply} />
         ))}
         <TextInput
           style={{ background: "#FFF" }}

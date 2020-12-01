@@ -5,9 +5,10 @@ import styled from "styled-components/native";
 const Container = styled(View)((P) => ({
   flex: P.splitScreen ? 2 : 1,
   display: "flex",
-  alignItems: "center",
+  alignItems: "stretch",
   justifyContent: "stretch",
   background: "purple",
+  padding: 20
 }));
 
 const Thread = ({ children, splitScreen, active }) => {

@@ -18,7 +18,7 @@ const AvatarWrapper = styled(View)({
   flex: `0 0 35px`,
   height: 35,
   marginRight: 10,
-  borderRadius: 17.5
+  borderRadius: 17.5,
 });
 
 const TextWrapper = styled(View)({
