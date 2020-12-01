@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Button, Text, TextInput, View } from "react-native";
+import { Button, TextInput } from "react-native";
+import ComposeReply from "../components/ComposeReply";
 import PostPreview from "../components/PostPreview";
 import ThreadReply from "../components/ThreadReply";
 import useDimensions from "../hooks/useDimensions";
@@ -15,22 +16,11 @@ const Home = () => {
   const splitScreen = useDimensions();
   const [activeThread, setActiveThread] = useState(0);
   const [activePane, setActivePane] = useState(POSTS);
-  const [textValue, setTextValue] = useState("");
   const [posts, setPosts] = useState(mockPosts);
 
   const changeThread = (i) => {
     setActiveThread(i);
     return setActivePane(THREAD);
-  };
-
-  const addReply = () => {
-    const newArray = [...posts];
-    newArray[activeThread].replies.push({
-      author: "Charlie Hay",
-      text: textValue,
-    });
-    setPosts(newArray);
-    setTextValue("");
   };
 
   return (
@@ -49,18 +39,23 @@ const Home = () => {
 
       {/* THREAD */}
       <Thread splitScreen={splitScreen} active={activePane === THREAD}>
-        {posts[activeThread].replies.map((reply, index) => (
-          <ThreadReply key={`reply-${index}`} reply={reply} />
-        ))}
-        <TextInput
-          style={{ background: "#FFF" }}
-          value={textValue}
-          onChange={(e) => setTextValue(e.target.value)}
-        />
-        <Button title="Submit" onPress={addReply} />
         {activePane === THREAD && !splitScreen && (
-          <Button title="Go Back" onPress={() => setActivePane(POSTS)} />
+          <Button
+            title="Go Back"
+            onPress={() => setActivePane(POSTS)}
+          />
         )}
+        <PostPreview post={posts[activeThread]} changeThread={changeThread} />
+        <ComposeReply
+          activeThread={activeThread}
+          posts={posts}
+          setPosts={setPosts}
+        />
+        {posts[activeThread].replies.map((reply, index) => (
+          <>
+            <ThreadReply key={`reply-${index}`} reply={reply} />
+          </>
+        ))}
       </Thread>
     </Page>
   );
