@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "habichat-16f46"
+  },
+  "targets": {
+    "habichat-16f46": {
+      "hosting": {
+        "habichatapp": [
+          "habichatapp"
+        ]
+      }
+    }
+  }
+}
