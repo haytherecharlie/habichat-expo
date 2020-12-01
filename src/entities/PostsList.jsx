@@ -5,6 +5,8 @@ import styled from "styled-components/native";
 
 const CardWrapper = styled(TouchableOpacity)({
   padding: 20,
+  borderBottomWidth: 1,
+  borderBottomColor: `#F5F5F5`
 });
 
 const PostsList = ({ posts, changeThread }) => {

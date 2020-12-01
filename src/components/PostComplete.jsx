@@ -10,7 +10,7 @@ const PostContainer = styled(View)({
 });
 
 const InfoWrapper = styled(View)({
-  margin: `0px 20px`,
+  margin: `20px 20px 0px 20px`,
 });
 
 const ContentWrapper = styled(View)({
@@ -22,7 +22,7 @@ const ContentWrapper = styled(View)({
   padding: `20px`,
   borderBottomWidth: 1,
   borderBottomColor: `#F8F8F8`,
-  boxShadow: `0 5px 5px rgba(0,0,0,0.1)`,
+  boxShadow: `0 2px 5px rgba(0,0,0,0.1)`,
 });
 
 const PostText = styled(Text)({
