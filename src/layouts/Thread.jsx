@@ -7,7 +7,7 @@ const Container = styled(View)((P) => ({
   display: "flex",
   alignItems: "stretch",
   justifyContent: "stretch",
-  background: "purple",
+  background: "#FFF",
   padding: 20
 }));
 

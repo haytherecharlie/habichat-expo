@@ -8,28 +8,25 @@ const PostWrapper = styled(TouchableOpacity)({
   flexDirection: "row",
   justifyContent: "stretch",
   background: `rgba(255,255,255,0.3)`,
-  padding: `20px 25px`,
+  padding: `20px 10px`,
   borderBottomWidth: 1,
   borderBottomColor: `#CCC`,
 });
 
 const AvatarWrapper = styled(View)({
-  background: "indigo",
-  flex: `0 0 40px`,
-  height: 40,
+  background: "red",
+  flex: `0 0 35px`,
+  height: 35,
   marginRight: 10,
-  borderRadius: 10,
+  borderRadius: 17.5,
 });
 
 const TextWrapper = styled(View)({
   flex: 1,
   display: `flex`,
-  flexDirection: 'column',
-  alignItems: 'flex-start',
-  justifyContent: 'center'
 });
 
-const PostPreview = ({ changeThread, index, post }) => {
+const PostComplete = ({ changeThread, index, post }) => {
   const selectPost = () => {
     return changeThread(index);
   };
@@ -38,11 +35,11 @@ const PostPreview = ({ changeThread, index, post }) => {
     <PostWrapper key={`post${index}`} onPress={selectPost}>
       <AvatarWrapper />
       <TextWrapper>
-        <Text style={{ fontFamily: 'medium', fontSize: 14, marginBottom: 3 }}>{post.author}</Text>
-        <Text style={{ fontFamily: 'regular', fontSize: 12 }}>{post.text}</Text>
+        <Text style={{ fontFamily: 'bold', fontSize: 17 }}>{post.author}</Text>
+        <Text style={{ fontFamily: 'regular', fontSize: 21  }}>{post.text}</Text>
       </TextWrapper>
     </PostWrapper>
   );
 };
 
-export default PostPreview;
+export default PostComplete;

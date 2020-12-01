@@ -8,7 +8,7 @@ const Container = styled(View)({
   flexDirection: "row",
   alignItems: "stretch",
   justifyContent: "center",
-  background: "papayawhip",
+  background: "#FFF",
 });
 
 const Wrapper = styled(View)({
@@ -17,7 +17,7 @@ const Wrapper = styled(View)({
   flexDirection: "row",
   width: `100%`,
   maxWidth: 1200,
-  background: "goldenrod",
+  background: "#FFF",
 });
 
 const Page = ({ children }) => {

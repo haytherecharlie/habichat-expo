@@ -7,7 +7,7 @@ const Container = styled(View)((P) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "stretch",
-  background: "indigo",
+  background: "#FFF",
 }));
 
 const Posts = ({ children, splitScreen, active }) => {
