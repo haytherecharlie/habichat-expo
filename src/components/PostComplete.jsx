@@ -15,15 +15,13 @@ const ContentWrapper = styled(View)({
   flexDirection: "column",
   alignItems: "flex-start",
   justifyContent: "center",
-  // background: 'rgba(0,0,0,0.1)',
-  margin: 20,
-  borderRadius: 10
+  margin: `20px 20px 0px 15px`,
 });
 
 const PostText = styled(Text)({
   fontFamily: 'regular',
   fontSize: 25,
-  color: `#888`
+  color: `#444`
 });
 
 const PostBody = ({ post }) => {
