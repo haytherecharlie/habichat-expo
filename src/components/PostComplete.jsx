@@ -9,30 +9,39 @@ const PostContainer = styled(View)({
   justifyContent: "stretch",
 });
 
+const InfoWrapper = styled(View)({
+  margin: `0px 20px`,
+});
+
 const ContentWrapper = styled(View)({
   padding: `10px 10px`,
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
   justifyContent: "center",
-  margin: `20px 20px 0px 15px`,
+  padding: `20px`,
+  borderBottomWidth: 1,
+  borderBottomColor: `#F8F8F8`,
+  boxShadow: `0 5px 5px rgba(0,0,0,0.1)`,
 });
 
 const PostText = styled(Text)({
-  fontFamily: 'regular',
+  fontFamily: "regular",
   fontSize: 25,
-  color: `#444`
+  color: `#444`,
 });
 
 const PostBody = ({ post }) => {
   return (
     <PostContainer>
-      <InfoCard
-        title={post.author}
-        subtitle="12 December 2020"
-        index="header"
-        handlePress={() => {}}
-      />
+      <InfoWrapper>
+        <InfoCard
+          title={post.author}
+          subtitle="12 December 2020"
+          index="header"
+          handlePress={() => {}}
+        />
+      </InfoWrapper>
       <ContentWrapper>
         <PostText>{post.text}</PostText>
       </ContentWrapper>

@@ -25,7 +25,7 @@ const ComposeReply = ({ activeThread, posts, setPosts }) => {
 
   const addReply = () => {
     const newArray = [...posts];
-    newArray[activeThread].replies.unshift({
+    newArray[activeThread].replies.push({
       author: "Charlie Hay",
       text: textValue,
     });

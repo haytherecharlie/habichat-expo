@@ -10,7 +10,7 @@ const HeaderContainer = styled(View)({
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "flex-start",
-  padding: `22px 30px`
+  padding: `30px 20px`
 });
 
 const Title = styled(Text)({

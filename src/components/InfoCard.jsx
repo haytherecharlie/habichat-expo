@@ -1,17 +1,13 @@
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 import styled from "styled-components/native";
 
-const PostWrapper = styled(TouchableOpacity)({
+const PostWrapper = styled(View)({
   width: `100%`,
   display: `flex`,
   flexDirection: "row",
   alignItems: 'center',
   justifyContent: "stretch",
-  background: `rgba(255,255,255,0.3)`,
-  padding: `25px 25px 25px 25px`,
-  borderBottomWidth: 1,
-  borderBottomColor: `#F5F5F5`,
 });
 
 const AvatarWrapper = styled(View)({
@@ -19,7 +15,7 @@ const AvatarWrapper = styled(View)({
   flex: `0 0 35px`,
   height: 35,
   marginRight: 10,
-  borderRadius: 10,
+  borderRadius: 17.5,
 });
 
 const TextWrapper = styled(View)({
@@ -30,9 +26,9 @@ const TextWrapper = styled(View)({
   justifyContent: 'center'
 });
 
-const InfoCard = ({ handlePress, index = 0, title = "", subtitle = "" }) => {
+const InfoCard = ({ index = 0, title = "", subtitle = "" }) => {
   return (
-    <PostWrapper key={`post${index}`} onPress={() => handlePress(index)}>
+    <PostWrapper>
       <AvatarWrapper />
       <TextWrapper>
         <Text style={{ color: `#444`, fontFamily: 'medium', fontSize: 14, marginBottom: 3 }}>{title}</Text>

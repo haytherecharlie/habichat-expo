@@ -1,28 +1,30 @@
 import React from "react";
-import { FlatList, SafeAreaView } from "react-native";
+import { FlatList, SafeAreaView, TouchableOpacity } from "react-native";
 import InfoCard from "../components/InfoCard";
 import styled from "styled-components/native";
 
-const Wrapper = styled(SafeAreaView)({
-  flex: 1,
+const CardWrapper = styled(TouchableOpacity)({
+  padding: 20,
 });
 
 const PostsList = ({ posts, changeThread }) => {
   return (
-    <Wrapper>
+    <SafeAreaView style={{ flex: 1 }}>
       <FlatList
         data={posts}
         keyExtractor={(post) => post.id}
-        renderItem={({item, index}) => (
-          <InfoCard
-            title={item.author}
-            subtitle={item.text}
-            index={index}
-            handlePress={changeThread}
-          />
+        renderItem={({ item, index }) => (
+          <CardWrapper onPress={() => changeThread(index)}>
+            <InfoCard
+              title={item.author}
+              subtitle={item.text}
+              index={index}
+              handlePress={changeThread}
+            />
+          </CardWrapper>
         )}
       />
-    </Wrapper>
+    </SafeAreaView>
   );
 };
 

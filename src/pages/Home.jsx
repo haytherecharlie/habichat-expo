@@ -38,14 +38,14 @@ const Home = () => {
           setActivePane={setActivePane}
         />
         <PostComplete post={posts[activeThread]} />
+        {posts[activeThread].replies.map((reply, index) => (
+          <ThreadReply key={`reply-${index}`} reply={reply} />
+        ))}
         <ComposeReply
           activeThread={activeThread}
           posts={posts}
           setPosts={setPosts}
         />
-        {posts[activeThread].replies.map((reply, index) => (
-          <ThreadReply key={`reply-${index}`} reply={reply} />
-        ))}
       </Thread>
     </Page>
   );
